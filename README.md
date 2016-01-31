@@ -2,7 +2,7 @@
 mhls_utias_dataset
 ==================================
 
-This is a ROS package to systematically read sensor msgs from the UTIAS-dataset (UTIAS MRCLAM robots dataset) and perform Moving horizon least squares on it for cooperative localization and target tracking. 4 robots (robot1-robot4), robot 5 is considered as a target.
+This is a ROS package to systematically read sensor msgs from the UTIAS-dataset (UTIAS MRCLAM robots dataset) and perform Moving horizon least squares on it for cooperative localization using inter-robot measurements.
 
 ==================================
 Dataset download
