@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+
+  <param name="NUM_ROBOTS" value="4" type="int" />
+  <param name="MAX_ROBOTS" value="5" type="int" />
+  <param name="NUM_TARGETS" value="0" type="int" />
+  <param name="WINDOW_SIZE_TGT" value="5" type="int" />
+  
+  <param name="MAX_ITERATIONS" value="100" type="int" />
+  
+  <param name="MAX_VERTEX_COUNT" value="140000" type="int" />
+  <param name="MAX_INDIVIDUAL_STATES" value="50000" type="int" />
+  
+  <param name="COP_LOC" value="true" type="bool" />
+  <param name="USE_LANDMARKS" value="true" type="bool" />
+  <param name="SLAM" value="false" type="bool" />
+  
+  <param name="K1" value="0.01" type="double" />
+  <param name="K2" value="0.01" type="double" />
+
+  <param name="K3" value="0.1" type="double" />  
+  <param name="K4" value="0.01" type="double" />
+  <param name="K5" value="0.5" type="double" />  
+
+  
+  <param name="decayCoeff" value="0.03" type="double" /> 
+
+  <arg name="MY_ID" default="1" />
+  <arg name="WINDOW_SIZE" default="1"/>
+  <arg name="DECAY_LAMBDA" default="1"/>  
+   
+  <node name="mhls_utias_dataset" pkg="mhls_utias_dataset" type="mhls_utias_dataset" args="four_rob_$(arg MY_ID)_$(arg WINDOW_SIZE)_$(arg DECAY_LAMBDA).results $(arg MY_ID) $(arg WINDOW_SIZE) $(arg DECAY_LAMBDA)" output="screen" />
+
+  <!-- Use this only when display is needed   -->
+<!--    <node name="evaluate_utias_dataset" pkg="evaluate_utias_dataset" type="evaluate_utias_dataset" args="/store/DataSet_Lisbon/GT_Images/4_Robot_Exp/Right/" />-->
+  
+  <arg name="rosbagpath" default="/home/aamir/catkin_ws/src/" />
+  <arg name="file_1" default="UTIAS_Dataset_1.bag" />
+  <arg name="file_5" default="UTIAS_Dataset_5.bag" />
+  <node pkg="rosbag" type="play" name="player" args=" -u 620 --clock $(arg rosbagpath)$(arg file_1)"/>
+
+</launch>
