@@ -16,21 +16,6 @@ find_package(catkin REQUIRED COMPONENTS
 
 INCLUDE_DIRECTORIES(${catkin_INCLUDE_DIRS})
 
-## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   BallData.msg
-#   LRMLandmarksData.msg
-#   LRMGTData.msg
-#   RobotState.msg
-# )
-
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-#   geometry_msgs     
-#   nav_msgs
-# )
 
 catkin_package(
 #  INCLUDE_DIRS include
@@ -60,9 +45,7 @@ find_package(OpenCV REQUIRED)
 INCLUDE_DIRECTORIES(${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 
-include_directories(/home/aamir/local/include)
-link_directories(/home/aamir/local/lib)
-# link_libraries(csparse cxsparse g2o_csparse_extension g2o_cli g2o_core g2o_interface g2o_parser g2o_solver_cholmod g2o_solver_csparse g2o_solver_dense g2o_solver_pcg g2o_stuff g2o_types_icp g2o_types_sba g2o_types_sim3 g2o_types_slam2d g2o_types_slam3d)
+link_libraries(csparse cxsparse g2o_csparse_extension g2o_cli g2o_core g2o_interface g2o_parser g2o_solver_cholmod g2o_solver_csparse g2o_solver_dense g2o_solver_pcg g2o_stuff g2o_types_icp g2o_types_sba g2o_types_sim3 g2o_types_slam2d g2o_types_slam3d)
 
 
 FIND_PACKAGE(Eigen REQUIRED)
