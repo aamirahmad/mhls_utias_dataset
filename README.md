@@ -12,13 +12,13 @@ Pre-requisites
 
     https://github.com/aamirahmad/utiasdata_to_rosbags
     
-3. Makse sure you have latest versions of the following libraries installed
+3. Make sure you have latest versions of the following libraries installed
 
    1. boost
    2. eigen
    3. g2o
    
-4. you might have to add the location of installed g2o libraries in the CMakeLists.txt of this package
+4. You might have to add the location of installed g2o libraries in the CMakeLists.txt of this package
 
 ==================================
 Instructions to use this package.
